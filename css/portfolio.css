@@ -1,0 +1,130 @@
+/* ?????????????????????????????
+   portfolio.css Ñ photo grid
+????????????????????????????????? */
+.portfolio {
+  background: #8f8888;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.portfolio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-lg);
+}
+
+.portfolio-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--black);
+}
+
+.portfolio-header h2 span {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  color: #303030;
+}
+
+.portfolio-header p {
+  max-width: 260px;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #303030;
+  text-align: right;
+}
+
+/* Asymmetric grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: #ccc;
+}
+
+.portfolio-item::before {
+  content: '';
+  display: block;
+  padding-top: 130%;
+}
+
+/* Wide items */
+.portfolio-item:nth-child(1),
+.portfolio-item:nth-child(4) {
+  grid-column: span 2;
+}
+
+.portfolio-item:nth-child(1)::before,
+.portfolio-item:nth-child(4)::before {
+  padding-top: 60%;
+}
+
+/* Image placeholder Ñ fixed ? absolute */
+.portfolio-item .img-placeholder {
+  position: absolute; /* ???? fixed Ñ ??? ? ?????? ??? */
+  inset: 0;
+  transition: transform var(--transition-slow);
+}
+
+/* ??? img ?????? ???????????? ????????? ????????? */
+.portfolio-item .img-placeholder img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* ?????????, ?? ?????????? */
+  object-position: center;
+  display: block;
+}
+
+/* Fallback-????????? ????? img ??? */
+.portfolio-item:nth-child(1) .img-placeholder:not(:has(img)) { background: linear-gradient(135deg, #d0d0d0, #a8a8a8); }
+.portfolio-item:nth-child(2) .img-placeholder:not(:has(img)) { background: linear-gradient(135deg, #c8c8c8, #9a9a9a); }
+.portfolio-item:nth-child(3) .img-placeholder:not(:has(img)) { background: linear-gradient(135deg, #b8b8b8, #888); }
+.portfolio-item:nth-child(4) .img-placeholder:not(:has(img)) { background: linear-gradient(135deg, #d8d8d8, #b0b0b0); }
+.portfolio-item:nth-child(5) .img-placeholder:not(:has(img)) { background: linear-gradient(135deg, #c0c0c0, #909090); }
+
+.portfolio-item:hover .img-placeholder {
+  transform: scale(0.98);
+}
+
+/* Hover overlay + label Ñ fixed ? absolute */
+.portfolio-item .item-overlay {
+  position: absolute; /* ???? fixed */
+  inset: 0;
+  background: rgba(10, 10, 10, 0);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-sm);
+  transition: background var(--transition-normal);
+}
+
+.portfolio-item:hover .item-overlay {
+  background: rgba(10, 10, 10, 0.35);
+}
+
+.portfolio-item .item-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all var(--transition-normal);
+}
+
+.portfolio-item:hover .item-label {
+  opacity: 1;
+  transform: translateY(0);
+}

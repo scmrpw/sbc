@@ -1,0 +1,99 @@
+/* ─────────────────────────────
+   about.css — about me section
+───────────────────────────────── */
+.about {
+  padding: var(--space-xl) var(--space-md);
+  background: #8f8888;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Left column */
+.about-left h2 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--black);
+}
+
+.about-left h2 em {
+  font-style: italic;
+  color: #303030;
+}
+
+.skills-list {
+  margin-top: var(--space-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid #E8E8E8;
+  font-size: 13px;
+  font-weight: 500;
+  color: #303030;
+  letter-spacing: 0.04em;
+}
+
+.skill-item .tag {
+  font-size: 10px;
+  font-weight: 400;
+  color: #303030;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Right column */
+.about-right {
+  padding-top: 16px;
+}
+
+.about-right p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: #181818;
+  margin-bottom: var(--space-sm);
+}
+
+.about-right p strong {
+  font-weight: 600;
+  color: var(--black);
+}
+
+.about-photo-accent {
+  margin-top: 40px;
+  position: relative;
+  height: 380px;
+  background: #e0e0e0;
+  overflow: hidden;
+}
+
+.about-photo-accent::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #d5d5d5 0%, #bbb 50%, #ccc 100%);
+}
+
+.about-photo-accent .photo-label {
+  position: absolute;
+  bottom: var(--space-sm);
+  left: var(--space-sm);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--white);
+}

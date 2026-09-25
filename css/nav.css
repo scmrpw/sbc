@@ -1,0 +1,51 @@
+/* ─────────────────────────────
+   nav.css — top navigation bar
+───────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px var(--space-md);
+  mix-blend-mode: difference;
+}
+
+.nav-logo {
+  height: 60px;
+  width: auto;
+  display: block;
+  filter: brightness(5) saturate(50%) invert(4%) sepia(97%) saturate(1000%) hue-rotate(330deg) brightness(100%);
+}
+
+nav .handle {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+}
+
+nav ul a {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+nav ul a:hover {
+  opacity: 0.5;
+}

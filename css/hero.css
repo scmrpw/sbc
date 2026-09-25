@@ -1,0 +1,124 @@
+/* ─────────────────────────────
+   hero.css — full-screen intro
+───────────────────────────────── */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: var(--black);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+/* Real photo — uncomment and set src when ready */
+.hero-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 39%;
+  height: 150%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0.95;
+}
+
+/* Placeholder silhouette (remove when .hero-photo is used) */
+.hero-photo-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(160deg, #2a2a2a 0%, #111 40%, #1e1e1e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-photo-placeholder::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 500px;
+  background: linear-gradient(180deg, #3a3a3a 0%, #555 60%, #3a3a3a 100%);
+  border-radius: 160px 160px 0 0;
+  opacity: 0.6;
+}
+
+.hero-photo-placeholder::after {
+  content: '';
+  position: absolute;
+  bottom: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #888;
+  opacity: 0.5;
+}
+
+/* Content block (right-aligned) */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0 var(--space-md) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.hero-tagline {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--grey-mid);
+  line-height: 1.8;
+  max-width: 280px;
+  text-align: right;
+  margin-bottom: var(--space-sm);
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 14px 28px;
+  transition: all var(--transition-normal);
+  margin-bottom: var(--space-md);
+}
+
+.hero-cta:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+.hero-cta .arrow {
+  font-size: 14px;
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 8vw, 112px);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  text-align: right;
+}
+
+.hero-name span {
+  display: block;
+}
