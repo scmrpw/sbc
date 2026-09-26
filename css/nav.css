@@ -15,7 +15,7 @@ nav {
 }
 
 .nav-logo {
-  height: 60px;
+  height: 35px;
   width: auto;
   display: block;
   filter: brightness(5) saturate(50%) invert(4%) sepia(97%) saturate(1000%) hue-rotate(330deg) brightness(100%);
